@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"  href="style.css" />
+
+</head>
+<body>
+    <h1>About Nikki</h1>
+
+    <h2>Questions About Nikki</h2>
+
+    <ol>
+        <li>Does Nikki want a French Bulldog?</li>
+        <li>Does Nikki have any pets?</li>
+        <li>Does Nikki want to build a snowman?</li>
+        <li>Does Nikki love Mangoes?</li>
+        <li>Is Nikki's favorite anime FairyTail?</li>
+    </ol>
+
+    <script>
+
+        'use strict';
+
+        //Welcome message
+        var userName = prompt('Hi, welcome to my About Nikki site, what\s your name?');
+        alert('Welcome to my page ' + userName +'!');
+        console.log('welcome to my page ' + userName);
+        
+        //Bulldog question
+        var bullDog = prompt('Does Nikki want a French Bulldog?');
+        bullDog = bullDog.toLowerCase();
+        console.log('Does Nikki want a French Bulldog?' + bullDog);
+
+        if(bullDog === 'yes' || bullDog === 'y') {
+            alert('Way to go! I really want a french bulldog!');
+        }
+        
+        else if (bullDog === 'no' || bullDog === 'n') {
+            alert('Oh no! I love frenchies!')
+        }
+        
+        else {
+            alert('Please respond using y or n, or yes or no.');
+        }
+
+        //Pets Question
+        var pets = prompt('Does Nikki have any pets?');
+        pets = pets.toLowerCase();
+        console.log('Does Nikki have any pets?' + pets);
+
+        if(pets === 'yes' || pets === 'y') {
+            alert('You are correct! She as 2 cats: Waldo and Nala!');
+        }
+       
+        else if(pets ==='no' || pets === 'n') {
+            alert('You are incorrect, minus 5 points for Slytherin!');
+        }
+
+        else {
+            alert('Please respond using y or n, or yes or no.');
+        }
+
+        //Snowman question
+        var snowman = prompt('Does Nikki want to build a snowman?');
+        snowman = snowman.toLowerCase();
+        console.log('Does Nikki want to build a snowman?' + snowman)
+
+        if(snowman === 'yes' || snowman === 'y') {
+            alert('I always want to build a snowman!');
+        }
+        
+        else if (snowman === 'no' || snowman === 'n') {
+            alert('Who doesn\'t want to build a snowman?');
+        }
+        
+        else {
+            alert('Please respond using y or n, or yes or no.');
+        }
+    
+        //Mangoes question
+        var mangoes = prompt('Does Nikki love mangoes?');
+        mangoes = mangoes.toLowerCase();
+        console.log('Does Nikki love mangoes?' + mangoes);
+
+        if(mangoes === 'yes' || mangoes === 'y') {
+            alert('I looooove mangoes!');
+        }
+        
+        else if (mangoes === 'NO' || mangoes === 'N') {
+            alert('Mangoes are life!');
+        }
+
+        else {
+            alert('Please respond using y or n, or yes or no.');
+        }
+
+         //FairyTail question
+        var fairyTail = prompt('Is Nikki\'s favorite anime FairyTail?');
+        fairyTail = fairyTail.toLowerCase();
+        console.log('Is Nikki\'s favorite anime FairyTail?' + fairyTail);
+
+        if(fairyTail === 'yes' || fairyTail === 'y') {
+            alert('Who is your favorite character?');
+        }
+        
+        else if (fairyTail === 'no' || fairyTail === 'n') {
+            alert('You are the weakest link! Goodbye!');
+        }
+        else {
+            alert('Please respond using y or n, or yes or no.');
+        }
+
+    </script>
+    
+    
+</body>
+</html>
