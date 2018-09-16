@@ -1,33 +1,25 @@
 'use strict';
-
+var totalAnswer = 0;
 //Welcome message
 var userName = prompt('Hi, welcome to my About Nikki site, what\s your name?');
 alert('Welcome to my page ' + userName + '!');
 console.log('welcome to my page ' + userName);
 
 //Bulldog question
+
 var bullDog = prompt('Does Nikki want a French Bulldog?');
 bullDog = bullDog.toLowerCase();
-var rightAnswers = [];
-var wrongAnswers = [];
+console.log('Does Nikki want a French Bulldog?' + bullDog);
+ if(bullDog === 'yes' || bullDog === 'y') {
+    alert('Way to go! I really want a french bulldog!');
+    totalAnswer++;
+}
 
-var functionBulldog = function () {
-    if (bullDog === 'yes' || bullDog === 'y') {
-        alert('Way to go! I really want a french bulldog!');
-        rightAnswers.push(bullDog);
-        break;
-    }
-
-    else if (bullDog === 'no' || bullDog === 'n') {
-        alert('Oh no! I love frenchies!')
-        wrongAnswers.push(bullDog);
-    }
-
-    else {
-        var bullDog = prompt('Please respond using y or n, or yes or no.');
-    }
+else if (bullDog === 'no' || bullDog === 'n') {
+    alert('Oh no! I love frenchies!')
+} else {
+    alert('Please respond using y or n, or yes or no.');
 };
-function(bullDog);
 
 //Pets Question
 var pets = prompt('Does Nikki have any pets?');
@@ -36,6 +28,7 @@ console.log('Does Nikki have any pets?' + pets);
 
 if (pets === 'yes' || pets === 'y') {
     alert('You are correct! She as 2 cats: Waldo and Nala!');
+    totalAnswer++;
 }
 
 else if (pets === 'no' || pets === 'n') {
@@ -53,6 +46,7 @@ console.log('Does Nikki want to build a snowman?' + snowman)
 
 if (snowman === 'yes' || snowman === 'y') {
     alert('I always want to build a snowman!');
+    totalAnswer++;
 }
 
 else if (snowman === 'no' || snowman === 'n') {
@@ -70,6 +64,7 @@ console.log('Does Nikki love mangoes?' + mangoes);
 
 if (mangoes === 'yes' || mangoes === 'y') {
     alert('I looooove mangoes!');
+    totalAnswer++;
 }
 
 else if (mangoes === 'NO' || mangoes === 'N') {
@@ -87,6 +82,7 @@ console.log('Is Nikki\'s favorite anime FairyTail?' + fairyTail);
 
 if (fairyTail === 'yes' || fairyTail === 'y') {
     alert('Who is your favorite character?');
+    totalAnswer++;
 }
 
 else if (fairyTail === 'no' || fairyTail === 'n') {
@@ -98,27 +94,36 @@ else {
 
 
 //Guess number
-var guess = prompt('Can you guess my favorite number? It is between 1-20.');
-console.log('Can you guess my favorite number?' + guess);
-
-var number = 16;
-var guesses = parseInt(guess);
-for (var i = 0; i < 4; i++) {
-    if (guesses === number) {
-        alert('Homerun! You guessed my number!');
-        console.log('homerun' + guesses)
-        break;
-    } else if (guesses < number) {
-        guess = prompt('Your guess was too low. There are no low riders here so please try again!');
-        guesses = parseInt(guess);
-        console.log('too low' + guess);
-        break;
-    } else (guesses > number)
-    guess = prompt('Whoa! That\'s too high. Guess again.');
-    guesses = parseInt(guess);
-    console.log('Whoa! That\'s too high.' + number);
-    break;
-}
+var guess= prompt('Can you guess my favorite number? It is between 1-20.');
+  var guessCorrect = false;
+  var turnsLeft = 4;
+  do {
+    var number = 16;
+    var guesses = parseInt(guess);
+    for(var i = 0; i < 4; i++) {
+    //   turnsLeft --;
+      console.log(turnsLeft, 'this is turns left is it running?');
+    }
+    if(guesses === number){
+      alert('Homerun! You guessed my number!');
+      console.log('homerun' + guesses);
+      guessCorrect = true;
+      totalAnswer ++;
+      break;
+      console.log(guessCorrect);
+    } else if(guesses < number) {
+      guess = prompt('Your guess was too low. There are no low riders here so please try again!');
+      console.log(turnsLeft);
+      turnsLeft --;
+      guesses = parseInt(guess);
+      console.log('too low' + guess);
+    } else if(guesses > number){
+      guess = prompt('Whoa! That\'s too high. Guess again.');
+      guesses = parseInt(guess);
+      console.log('Whoa! That\'s too high.' + number);
+    }
+    // guessCorrect === false && turnsLeft >0
+  } while(guessCorrect === false && turnsLeft >0);
 
 //multiple answers
 
@@ -131,6 +136,7 @@ while (guess < 6) {
     for (var i = 0; i < countries.length; i++) {
         if (answer === countries[i]) {
             alert('You got it correct!');
+            totalAnswer++;
             answer = true;
         }
     }
@@ -140,3 +146,6 @@ while (guess < 6) {
         alert('guess again');
     }
 };
+
+//tally prompt
+var questions = prompt('You\'re done!' + username + ' You got ' + totalAnswer + ' out of 7 correct.');
