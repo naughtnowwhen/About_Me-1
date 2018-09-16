@@ -1,9 +1,12 @@
 'use strict';
-var totalAnswer = 0;
+
+
 //Welcome message
 var userName = prompt('Hi, welcome to my About Nikki site, what\s your name?');
 alert('Welcome to my page ' + userName + '!');
 console.log('welcome to my page ' + userName);
+
+var totalAnswer = 0;
 
 //Bulldog question
 
@@ -148,4 +151,5 @@ while (guess < 6) {
 };
 
 //tally prompt
-var questions = prompt('You\'re done!' + username + ' You got ' + totalAnswer + ' out of 7 correct.');
+var totalAnswer = prompt('Congratulations, ' + userName + ' you got ' + totalAnswer + ' out of 7 correct!');
+console.log(totalAnswer);
