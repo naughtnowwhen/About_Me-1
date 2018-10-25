@@ -10,94 +10,118 @@ var totalAnswer = 0;
 
 //Bulldog question
 
-var bullDog = prompt('Does Nikki want a French Bulldog?');
-bullDog = bullDog.toLowerCase();
-console.log('Does Nikki want a French Bulldog?' + bullDog);
- if(bullDog === 'yes' || bullDog === 'y') {
+var bulldogFun = function () {
+  var bullDog = prompt('Does Nikki want a French Bulldog?');
+  bullDog = bullDog.toLowerCase();
+  console.log('Does Nikki want a French Bulldog?' + bullDog);
+  if(bullDog === 'yes' || bullDog === 'y') {
     alert('Way to go! I really want a french bulldog!');
     totalAnswer++;
-}
+  }
 
-else if (bullDog === 'no' || bullDog === 'n') {
-    alert('Oh no! I love frenchies!')
-} else {
+  else if (bullDog === 'no' || bullDog === 'n') {
+    alert('Oh no! I love frenchies!');
+  } else {
     alert('Please respond using y or n, or yes or no.');
+  }
 };
 
-//Pets Question
-var pets = prompt('Does Nikki have any pets?');
-pets = pets.toLowerCase();
-console.log('Does Nikki have any pets?' + pets);
+bulldogFun();
 
-if (pets === 'yes' || pets === 'y') {
+//Pets Question
+
+var petsFun = function () {
+  var pets = prompt('Does Nikki have any pets?');
+  pets = pets.toLowerCase();
+  console.log('Does Nikki have any pets?' + pets);
+
+  if (pets === 'yes' || pets === 'y') {
     alert('You are correct! She as 2 cats: Waldo and Nala!');
     totalAnswer++;
-}
+  }
 
-else if (pets === 'no' || pets === 'n') {
+  else if (pets === 'no' || pets === 'n') {
     alert('You are incorrect, minus 5 points for Slytherin!');
-}
+  }
 
-else {
+  else {
     pets = prompt('Please respond using y or n, or yes or no.');
-}
+  }
+};
+petsFun();
 
 //Snowman question
-var snowman = prompt('Does Nikki want to build a snowman?');
-snowman = snowman.toLowerCase();
-console.log('Does Nikki want to build a snowman?' + snowman)
 
-if (snowman === 'yes' || snowman === 'y') {
+var snowmanFun = function(){
+  var snowman = prompt('Does Nikki want to build a snowman?');
+  snowman = snowman.toLowerCase();
+  console.log('Does Nikki want to build a snowman?' + snowman);
+
+  if (snowman === 'yes' || snowman === 'y') {
     alert('I always want to build a snowman!');
     totalAnswer++;
-}
+  }
 
-else if (snowman === 'no' || snowman === 'n') {
+
+  else if (snowman === 'no' || snowman === 'n') {
     alert('Who doesn\'t want to build a snowman?');
-}
+  }
 
-else {
+  else {
     alert('Please respond using y or n, or yes or no.');
-}
+  }
+
+};
+snowmanFun();
 
 //Mangoes question
-var mangoes = prompt('Does Nikki love mangoes?');
-mangoes = mangoes.toLowerCase();
-console.log('Does Nikki love mangoes?' + mangoes);
 
-if (mangoes === 'yes' || mangoes === 'y') {
+var mangoesFun = function(){
+
+  var mangoes = prompt('Does Nikki love mangoes?');
+  mangoes = mangoes.toLowerCase();
+  console.log('Does Nikki love mangoes?' + mangoes);
+
+  if (mangoes === 'yes' || mangoes === 'y') {
     alert('I looooove mangoes!');
     totalAnswer++;
-}
+  }
 
-else if (mangoes === 'NO' || mangoes === 'N') {
+  else if (mangoes === 'NO' || mangoes === 'N') {
     alert('Mangoes are life!');
-}
+  }
 
-else {
+  else {
     alert('Please respond using y or n, or yes or no.');
-}
+  }
+
+};
+mangoesFun();
 
 //FairyTail question
-var fairyTail = prompt('Is Nikki\'s favorite anime FairyTail?');
-fairyTail = fairyTail.toLowerCase();
-console.log('Is Nikki\'s favorite anime FairyTail?' + fairyTail);
 
-if (fairyTail === 'yes' || fairyTail === 'y') {
+var fairyFun = function(){
+  var fairyTail = prompt('Is Nikki\'s favorite anime FairyTail?');
+  fairyTail = fairyTail.toLowerCase();
+  console.log('Is Nikki\'s favorite anime FairyTail?' + fairyTail);
+
+  if (fairyTail === 'yes' || fairyTail === 'y') {
     alert('Who is your favorite character?');
     totalAnswer++;
-}
+  }
 
-else if (fairyTail === 'no' || fairyTail === 'n') {
+  else if (fairyTail === 'no' || fairyTail === 'n') {
     alert('You are the weakest link! Goodbye!');
-}
-else {
+  }
+  else {
     alert('Please respond using y or n, or yes or no.');
-}
-
+  }
+};
+fairyFun();
 
 //Guess number
-var guess= prompt('Can you guess my favorite number? It is between 1-20.');
+guessFun = function(){
+  var guess= prompt('Can you guess my favorite number? It is between 1-20.');
   var guessCorrect = false;
   var turnsLeft = 4;
   do {
@@ -125,30 +149,36 @@ var guess= prompt('Can you guess my favorite number? It is between 1-20.');
       guesses = parseInt(guess);
       console.log('Whoa! That\'s too high.' + number);
     }
-    // guessCorrect === false && turnsLeft >0
+  // guessCorrect === false && turnsLeft >0
   } while(guessCorrect === false && turnsLeft >0);
+};
+guessFun();
 
 //multiple answers
 
-var guess = 0;
-var countries = ['germany', 'poland', 'lithuania', 'czech republic', 'japan', 'mexico'];
+var countryFun = function(){
 
-while (guess < 6) {
+  var guess = 0;
+  var countries = ['germany', 'poland', 'lithuania', 'czech republic', 'japan', 'mexico'];
+
+  while (guess < 6) {
     guess++;
     var answer = prompt('What countries have I lived in?');
     for (var i = 0; i < countries.length; i++) {
-        if (answer === countries[i]) {
-            alert('You got it correct!');
-            totalAnswer++;
-            answer = true;
-        }
+      if (answer === countries[i]) {
+        alert('You got it correct!');
+        totalAnswer++;
+        answer = true;
+      }
     }
     if (answer === true) {
-        break;
+      break;
     } else if (guess < 6) {
-        alert('guess again');
+      alert('guess again');
     }
+  }
 };
+countryFun();
 
 //tally prompt
 var totalAnswer = prompt('Congratulations, ' + userName + ' you got ' + totalAnswer + ' out of 7 correct!');
